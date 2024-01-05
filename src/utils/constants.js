@@ -1,0 +1,1 @@
+export const borders = ['bottom', 'left right bottom', ' bottom', 'bottom', ' right bottom left', 'bottom', '', 'right left', ' ']
