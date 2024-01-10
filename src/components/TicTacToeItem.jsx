@@ -19,9 +19,6 @@ const TicTacToeItem = ({ onClick, clicking, checkWinnerHandler }) => {
             y1="25"
             x2="170"
             y2="170"
-            stroke="rgb(0, 8, 255)"
-            strokeWidth="20"
-            strokeLinecap="round"
             onAnimationStart={() => playSound(crossSound)}
           ></line>
           <line
@@ -30,9 +27,6 @@ const TicTacToeItem = ({ onClick, clicking, checkWinnerHandler }) => {
             y1="25"
             x2="25"
             y2="170"
-            stroke="rgb(0, 8, 255)"
-            strokeWidth="20"
-            strokeLinecap="round"
             onAnimationEnd={checkWinnerHandler}
           ></line>
         </TicTacFigures>
@@ -72,7 +66,6 @@ const draw = keyframes`
 const Container = styled("div")`
   width: 200px;
   height: 200px;
-  box-sizing: border-box;
   box-shadow: 0 0 15px 1px rgb(157, 0, 255);
   font-family: Roboto;
 `;
@@ -87,6 +80,9 @@ const TicTacFigures = styled("svg")`
     animation-duration: 0.6s;
     animation-fill-mode: forwards;
     filter: drop-shadow(0 0 10px rgb(0, 8, 255));
+    stroke: rgb(0, 8, 255);
+    stroke-width: 20;
+    stroke-linecap: round;
   }
   .second {
     animation-delay: 0.6s;
