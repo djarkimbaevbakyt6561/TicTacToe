@@ -1,1 +1,0 @@
-export const array = [{ state: null, id: 1 }, { state: null, id: 2 }, { state: null, id: 3 }, { state: null, id: 4 }, { state: null, id: 5 }, { state: null, id: 6 },{ state: null, id: 7 }, { state: null, id: 8 }, { state: null, id: 9 }]

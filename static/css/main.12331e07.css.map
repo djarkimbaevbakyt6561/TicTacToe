@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.12331e07.css","mappings":"4JACA,KACI,QACJ","sources":["index.css"],"sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400&family=Roboto:wght@300;400;500;700&display=swap');\r\nbody {\r\n    margin: 0;\r\n}"],"names":[],"sourceRoot":""}
