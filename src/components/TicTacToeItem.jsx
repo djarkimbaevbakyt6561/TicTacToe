@@ -14,39 +14,37 @@ const TicTacToeItem = ({ onClick, clicking, checkWinnerHandler }) => {
     <Container onClick={onClick}>
       {clicking === "cross" && (
         <TicTacFigures>
-          <line
-            x1="25"
-            y1="25"
-            x2="170"
-            y2="170"
-            onAnimationStart={() => playSound(crossSound)}
-          ></line>
-          <line
-            className="second"
-            x1="170"
-            y1="25"
-            x2="25"
-            y2="170"
-            onAnimationEnd={checkWinnerHandler}
-          ></line>
+          {clicking === "cross" && (
+            <TicTacFigures>
+              <line
+                x1="15%"
+                y1="15%"
+                x2="85%"
+                y2="85%"
+                onAnimationStart={() => playSound(crossSound)}
+              ></line>
+              <line
+                className="second"
+                x1="85%"
+                y1="15%"
+                x2="15%"
+                y2="85%"
+                onAnimationEnd={checkWinnerHandler}
+              ></line>
+            </TicTacFigures>
+          )}
         </TicTacFigures>
       )}
       {clicking === "circle" && (
-        <TicTacFigures className="circle">
+        <TicTacFigures className="circle" circleLength={circleLength}>
           <circle
-            r="84"
-            cx="98"
-            cy="98"
+            r="40%"
+            cx="50%"
+            cy="50%"
             stroke="rgb(255, 119, 0)"
-            strokeWidth="18"
             filter="drop-shadow(0 0 10px rgb(255, 155, 4))"
             fill="none"
             strokeLinecap="round"
-            style={{
-              strokeDasharray: circleLength,
-              strokeDashoffset: circleLength,
-              animation: "animateCircle 1.3s forwards",
-            }}
             onAnimationStart={() => playSound(circleSound)}
             onAnimationEnd={checkWinnerHandler}
           />
@@ -68,6 +66,18 @@ const Container = styled("div")`
   height: 200px;
   box-shadow: 0 0 15px 1px rgb(157, 0, 255);
   font-family: Roboto;
+  @media (min-width: 497px) and (max-width: 688px) {
+    width: 150px; /* измените стили для мобильных устройств */
+    height: 150px;
+  }
+  @media (min-width: 419px) and (max-width: 497px) {
+    width: 125px; /* измените стили для мобильных устройств */
+    height: 125px;
+  }
+  @media (max-width: 419px) {
+    width: 100px; /* измените стили для мобильных устройств */
+    height: 100px;
+  }
 `;
 
 const TicTacFigures = styled("svg")`
@@ -83,6 +93,36 @@ const TicTacFigures = styled("svg")`
     stroke: rgb(0, 8, 255);
     stroke-width: 20;
     stroke-linecap: round;
+    @media (min-width: 497px) and (max-width: 688px) {
+      stroke-width: 16;
+      animation-duration: 0.9s;
+    }
+    @media (min-width: 419px) and (max-width: 497px) {
+      stroke-width: 13;
+      animation-duration: 1.1s;
+    }
+    @media (max-width: 419px) {
+      stroke-width: 12;
+      animation-duration: 1.3s;
+    }
+  }
+  circle {
+    stroke-dasharray: ${(props) => props.circleLength};
+    stroke-dashoffset: ${(props) => props.circleLength};
+    animation: animateCircle 1.3s forwards;
+    stroke-width: 18;
+    @media (min-width: 497px) and (max-width: 688px) {
+      stroke-width: 15;
+      animation: animateCircle 1.6s forwards;
+    }
+    @media (min-width: 419px) and (max-width: 497px) {
+      stroke-width: 12;
+      animation: animateCircle 1.8s forwards;
+    }
+    @media (max-width: 419px) {
+      stroke-width: 11;
+      animation: animateCircle 2s forwards;
+    }
   }
   .second {
     animation-delay: 0.6s;

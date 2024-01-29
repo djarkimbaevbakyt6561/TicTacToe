@@ -1,9 +1,10 @@
-import { Button, styled } from "@mui/material";
+import { styled } from "@mui/material";
 import { useState } from "react";
 import TicTacToe from "./components/TicTacToe";
 import ResultTicTacToe from "./components/ResultTicTacToe";
 import logo from "./assets/icons/logo-tictactoe.png";
 import { array } from "./utils/constants";
+import { StyledButton } from "./components/UI/StyledButton";
 
 const Header = ({ togglePlayHandler }) => (
   <HeaderContainer>
@@ -22,9 +23,8 @@ function App() {
   };
   const resetGame = () => {
     setCheckWinnerBoolean(null);
-    setClickingArray(array)
-
-  }
+    setClickingArray(array);
+  };
   const checkWinner = (clickingArray) => {
     const winConditions = [
       [0, 1, 2],
@@ -82,23 +82,20 @@ const Container = styled("div")`
 const Image = styled("img")`
   width: 300px;
   height: 300px;
-  box-shadow: 0 0 15px 1px rgb(0, 8, 255);
-  border-radius: 10px;
-`;
-const StyledButton = styled(Button)`
-  color: white;
-  padding: 20px 40px;
-  font-size: x-large;
-  text-transform: none;
-  border-radius: 10px;
-  border: 3px solid #006eff;
-  background: #0d0d98;
-  box-shadow: 0 0 15px 1px rgb(0, 8, 255);
-  :hover {
-    border: 3px solid #d47407;
-    color: #ff8a05;
-    box-shadow: 0 0 15px 1px #ff8a05;
+  @media (min-width: 497px) and (max-width: 688px) {
+    width: 250px;
+    height: 250px;
   }
+  @media (min-width: 419px) and (max-width: 497px) {
+    width: 200px;
+    height: 200px;
+  }
+  @media (max-width: 419px) {
+    width: 150px;
+    height: 150px;
+  }
+  box-shadow: 0 0 15px 1px rgb(0, 8, 255);
+  border-radius: 10px;
 `;
 const HeaderContainer = styled("div")`
   display: flex;
@@ -109,5 +106,14 @@ const HeaderContainer = styled("div")`
     font-size: 60px;
     color: rgb(255, 119, 0);
     text-shadow: 1px 1px 5px rgb(255, 155, 4);
+    @media (min-width: 497px) and (max-width: 688px) {
+      font-size: 50px;
+    }
+    @media (min-width: 419px) and (max-width: 497px) {
+      font-size: 40px;
+    }
+    @media (max-width: 419px) {
+      font-size: 30px;
+    }
   }
 `;

@@ -38,6 +38,15 @@ export default TicTacToe;
 const Container = styled("div")`
   display: flex;
   width: 600px;
+  @media (min-width: 497px) and (max-width: 688px){
+    width: 450px; 
+  }
+  @media (min-width: 419px) and (max-width: 497px){
+    width: 375px; 
+  }
+  @media (max-width: 419px){
+    width: 300px; 
+  }
   flex-wrap: wrap;
   border-radius: 10px;
   border: 4px solid rgb(255, 0, 212);
