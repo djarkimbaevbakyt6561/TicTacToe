@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/TicTacToe/static/css/main.12331e07.css",
+    "main.js": "/TicTacToe/static/js/main.8467fcba.js",
+    "static/media/logo-tictactoe.png": "/TicTacToe/static/media/logo-tictactoe.8ff6648526cf0fe82447.png",
+    "static/media/cross-sound.mp3": "/TicTacToe/static/media/cross-sound.dce072f747138d803426.mp3",
+    "static/media/circle-sound.mp3": "/TicTacToe/static/media/circle-sound.d8c162706a2d466c3413.mp3",
+    "index.html": "/TicTacToe/index.html",
+    "main.12331e07.css.map": "/TicTacToe/static/css/main.12331e07.css.map",
+    "main.8467fcba.js.map": "/TicTacToe/static/js/main.8467fcba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.12331e07.css",
+    "static/js/main.8467fcba.js"
+  ]
+}
